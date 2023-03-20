@@ -1,0 +1,22 @@
+#search{
+  width: inherit !important;
+  margin: 0 0.5rem;
+}
+.fa-chevron-down{
+  font-size: 12px !important;
+  // color: rgb(22, 77, 109);
+}
+.fa-shopping-cart{
+  font-size: 30px !important;
+}
+.cart-no{
+  min-width: 25px;
+  min-height: 25px;
+  border-radius: 50%;
+  font-size: 1rem;
+  background-color: rgb(35, 15, 122);
+  color:#eee;
+  text-align: center;
+  top: -10px;
+  right: 7px;
+}
