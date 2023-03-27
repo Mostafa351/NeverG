@@ -1,0 +1,90 @@
+<!-- Top Sale -->
+<section id="top_sale">
+  <div class="container py-5">
+    <h4 class="font-rubik font-size-20">Our Products</h4>
+    <hr />
+    <div class="row">
+      <section class="col-3">
+        <div class="my-3">
+          <h5 class="text-warning">Sort Products</h5>
+          <select class="form-select">
+            <option selected>Sort By</option>
+            <option value="sort">A-Z</option>
+            <option value="priceAsc">High Price</option>
+            <option value="priceDesc">Low Price</option>
+          </select>
+        </div>
+        <h5 class="text-warning">Brands</h5>
+        <div class="list-group my-3">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action active"
+            aria-current="true"
+          >
+            The current link item
+          </a>
+          <a href="#" class="list-group-item list-group-item-action"
+            >A second link item</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            >A third link item</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            >A fourth link item</a
+          >
+          <a class="list-group-item list-group-item-action disabled"
+            >A disabled link item</a
+          >
+        </div>
+        <h5 class="text-warning mt-5">Types</h5>
+        <div class="list-group my-3">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action active"
+            aria-current="true"
+          >
+            The current link item
+          </a>
+          <a href="#" class="list-group-item list-group-item-action"
+            >A second link item</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            >A third link item</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            >A fourth link item</a
+          >
+          <a class="list-group-item list-group-item-action disabled"
+            >A disabled link item</a
+          >
+        </div>
+      </section>
+      <section class="col-9">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <header>
+            <span>
+              Showing <strong>10 </strong> of
+              <strong>{{ count }}</strong> Results
+            </span>
+          </header>
+          <div class="mt-2 d-flex justify-content-around">
+            <input
+              type="text"
+              class="form-control"
+              style="width: 300px; height: 50px"
+              placeholder="Search"
+            />
+            <button class="btn btn-outline-primary mx-2">Search</button>
+            <button class="btn btn-outline-success">Reset</button>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div *ngFor="let product of products">
+            <app-product-item></app-product-item>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+<!-- !Top Sale -->

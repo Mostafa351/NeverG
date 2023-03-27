@@ -1,9 +1,9 @@
-#slides{
-  height: calc(100vh - 4.3rem);
-  background-color: aqua;
+
+#hero.picsum-img-wrapper{
+  height: 80vh !important;
 }
-img{
-  display: block;
+#hero img{
+  display: block !important;
   width: 100%;
-  height: 100%;
+  height: 85% !important;
 }

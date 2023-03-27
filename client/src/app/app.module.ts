@@ -1,3 +1,6 @@
+import { ShopModule } from './shop/shop.module';
+import { ShopComponent } from './shop/shop.component';
+import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -6,16 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderComponent } from './header/header.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HeaderComponent } from './core/header/header.component';
 import { MainComponent } from './main/main.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavBarComponent,
     MainComponent,
     FooterComponent
   ],
@@ -24,7 +25,9 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
+    ShopModule
   ],
   providers: [],
   bootstrap: [AppComponent]
