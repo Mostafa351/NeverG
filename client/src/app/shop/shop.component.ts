@@ -10,7 +10,7 @@ import { ShopService } from './shop.service';
 })
 export class ShopComponent {
   products: IProduct[] | undefined;
-  count: number = 0;
+  count: number = 0; countPerPage: number = 0;
 
   constructor(private shopService: ShopService) { }
 
@@ -18,6 +18,7 @@ export class ShopComponent {
     this.shopService.getProducts().subscribe((response: IPagination) => {
       this.products = response.data;
       this.count = response.count;
+      this.countPerPage = response.pageSize;
     }, error => {
       console.log(error);
     });
