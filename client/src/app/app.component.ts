@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   title = 'Friday Mart';
   constructor() { }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 
 }

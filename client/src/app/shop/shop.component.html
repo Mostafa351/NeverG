@@ -18,45 +18,23 @@
         <div class="list-group my-3">
           <a
             href="#"
-            class="list-group-item list-group-item-action active"
+            class="list-group-item list-group-item-action"
             aria-current="true"
+            *ngFor="let item of brands"
           >
-            The current link item
+            {{ item?.name }}
           </a>
-          <a href="#" class="list-group-item list-group-item-action"
-            >A second link item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >A third link item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >A fourth link item</a
-          >
-          <a class="list-group-item list-group-item-action disabled"
-            >A disabled link item</a
-          >
         </div>
         <h5 class="text-warning mt-5">Types</h5>
         <div class="list-group my-3">
           <a
             href="#"
-            class="list-group-item list-group-item-action active"
+            class="list-group-item list-group-item-action"
             aria-current="true"
+            *ngFor="let item of types"
           >
-            The current link item
+            {{ item?.name }}
           </a>
-          <a href="#" class="list-group-item list-group-item-action"
-            >A second link item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >A third link item</a
-          >
-          <a href="#" class="list-group-item list-group-item-action"
-            >A fourth link item</a
-          >
-          <a class="list-group-item list-group-item-action disabled"
-            >A disabled link item</a
-          >
         </div>
       </section>
       <section class="col-9">
