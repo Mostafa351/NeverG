@@ -7,11 +7,15 @@
       <section class="col-3">
         <div class="my-3">
           <h5 class="text-warning">Sort Products</h5>
-          <select class="form-select">
-            <option selected>Sort By</option>
+          <select
+            #sortTerm
+            class="form-select"
+            (change)="onSort(sortTerm.value)"
+          >
+            <option default>Sort By</option>
             <option value="sort">A-Z</option>
-            <option value="priceAsc">High Price</option>
-            <option value="priceDesc">Low Price</option>
+            <option value="priceDesc">High Price</option>
+            <option value="priceAsc">Low Price</option>
           </select>
         </div>
         <h5 class="text-warning">Brands</h5>
@@ -19,10 +23,12 @@
           <a
             href="#"
             class="list-group-item list-group-item-action"
+            [ngClass]="brand.id === brandIdSelected ? 'active' : ''"
             aria-current="true"
-            *ngFor="let item of brands"
+            *ngFor="let brand of brands"
+            (click)="onBrandSelected(brand.id)"
           >
-            {{ item?.name }}
+            {{ brand?.name }}
           </a>
         </div>
         <h5 class="text-warning mt-5">Types</h5>
@@ -31,9 +37,11 @@
             href="#"
             class="list-group-item list-group-item-action"
             aria-current="true"
-            *ngFor="let item of types"
+            *ngFor="let type of types"
+            [class.active]="type.id === typeIdSelected"
+            (click)="onTypeSelected(type.id)"
           >
-            {{ item?.name }}
+            {{ type?.name }}
           </a>
         </div>
       </section>
@@ -57,8 +65,8 @@
           </div>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <div *ngFor="let item of products; let i = index">
-            <app-product-item [product]="item"></app-product-item>
+          <div *ngFor="let product of products; let i = index">
+            <app-product-item [product]="product"></app-product-item>
           </div>
         </div>
       </section>
