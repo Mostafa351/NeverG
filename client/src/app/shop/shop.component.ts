@@ -1,9 +1,9 @@
-import { IProType } from './../shared/models/proType';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IBrand } from '../shared/models/brand';
 import { IPagination } from '../shared/models/pagination';
 import { IProduct } from '../shared/models/product';
 import { ShopService } from './shop.service';
+import { IProType } from './../shared/models/proType';
 
 @Component({
   selector: 'app-shop',

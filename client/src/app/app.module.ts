@@ -1,5 +1,4 @@
 import { ShopModule } from './shop/shop.module';
-import { ShopComponent } from './shop/shop.component';
 import { CoreModule } from './core/core.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,8 +25,10 @@ import { FooterComponent } from './core/footer/footer.component';
     NgbModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
     CoreModule,
-    ShopModule
+    ShopModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
