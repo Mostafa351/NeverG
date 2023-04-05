@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark color-second-bg p-1">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Friday Mart</a>
+    <a class="navbar-brand" routerLink="/">Friday Mart</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,24 +15,45 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto font-rubik mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            style="cursor: pointer"
+          >
+            HOME
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"
+          <a
+            class="nav-link"
+            routerLink="/shop"
+            routerLinkActive="active"
+            style="cursor: pointer"
+          >
+            SHOP
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/contact"
+            routerLinkActive="active"
+            style="cursor: pointer"
+          >
+            CONTACT
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/shop"
             >Category <i class="fas fa-chevron-down"></i
           ></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"
-            >Products <i class="fas fa-chevron-down"></i
-          ></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">OnSale</a>
-        </li>
+        </li> -->
         <!-- dropdown -->
         <!-- <li class="nav-item dropdown">
           <a

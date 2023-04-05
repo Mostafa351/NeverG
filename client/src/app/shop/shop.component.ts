@@ -41,6 +41,11 @@ export class ShopComponent {
       }
     });
   }
+  getProduct(id: number) {
+    this.shopService.getProduct(id).subscribe({
+
+    });
+  }
   getBrands() {
     this.shopService.getBrands().subscribe({
       next: (response: IBrand[]) => {
