@@ -21,7 +21,7 @@
         <h5 class="text-warning">Brands</h5>
         <div class="list-group my-3">
           <a
-            href="#"
+            style="cursor: pointer"
             class="list-group-item list-group-item-action"
             [ngClass]="brand.id === this.shopParams.brandId ? 'active' : ''"
             aria-current="true"
@@ -34,7 +34,7 @@
         <h5 class="text-warning mt-5">Types</h5>
         <div class="list-group my-3">
           <a
-            href="#"
+            style="cursor: pointer"
             class="list-group-item list-group-item-action"
             aria-current="true"
             *ngFor="let type of types"
