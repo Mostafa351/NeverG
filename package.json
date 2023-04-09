@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ngx-spinner": "^15.0.1"
+  }
+}

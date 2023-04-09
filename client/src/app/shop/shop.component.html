@@ -1,49 +1,49 @@
 <!-- Top Sale -->
 <section id="top_sale">
   <div class="container py-5">
-    <h4 class="font-rubik font-size-20">Our Products</h4>
-    <hr />
     <div class="row">
       <section class="col-3">
-        <div class="my-3">
-          <h5 class="text-warning">Sort Products</h5>
-          <select
-            #sortTerm
-            class="form-select"
-            (change)="onSort(sortTerm.value)"
-          >
-            <option default>Sort By</option>
-            <option value="sort">A-Z</option>
-            <option value="priceDesc">High Price</option>
-            <option value="priceAsc">Low Price</option>
-          </select>
-        </div>
-        <h5 class="text-warning">Brands</h5>
-        <div class="list-group my-3">
-          <a
-            style="cursor: pointer"
-            class="list-group-item list-group-item-action"
-            [ngClass]="brand.id === this.shopParams.brandId ? 'active' : ''"
-            aria-current="true"
-            *ngFor="let brand of brands"
-            (click)="onBrandSelected(brand.id)"
-          >
-            {{ brand?.name }}
-          </a>
-        </div>
-        <h5 class="text-warning mt-5">Types</h5>
-        <div class="list-group my-3">
-          <a
-            style="cursor: pointer"
-            class="list-group-item list-group-item-action"
-            aria-current="true"
-            *ngFor="let type of types"
-            [class.active]="type.id === this.shopParams.typeId"
-            (click)="onTypeSelected(type.id)"
-          >
-            {{ type?.name }}
-          </a>
-        </div>
+        <ng-container *ngIf="types && brands">
+          <div class="my-3">
+            <h5 class="text-warning">Sort Products</h5>
+            <select
+              #sortTerm
+              class="form-select"
+              (change)="onSort(sortTerm.value)"
+            >
+              <option default>Sort By</option>
+              <option value="sort">A-Z</option>
+              <option value="priceDesc">High Price</option>
+              <option value="priceAsc">Low Price</option>
+            </select>
+          </div>
+          <h5 class="text-warning">Brands</h5>
+          <div class="list-group my-3">
+            <a
+              style="cursor: pointer"
+              class="list-group-item list-group-item-action"
+              [ngClass]="brand.id === this.shopParams.brandId ? 'active' : ''"
+              aria-current="true"
+              *ngFor="let brand of brands"
+              (click)="onBrandSelected(brand.id)"
+            >
+              {{ brand?.name }}
+            </a>
+          </div>
+          <h5 class="text-warning mt-5">Types</h5>
+          <div class="list-group my-3">
+            <a
+              style="cursor: pointer"
+              class="list-group-item list-group-item-action"
+              aria-current="true"
+              *ngFor="let type of types"
+              [class.active]="type.id === this.shopParams.typeId"
+              (click)="onTypeSelected(type.id)"
+            >
+              {{ type?.name }}
+            </a>
+          </div>
+        </ng-container>
       </section>
       <section class="col-9">
         <div class="d-flex justify-content-between align-items-center mb-2">
@@ -52,7 +52,7 @@
             [pageNumber]="shopParams.pageNumber"
             [pageSize]="shopParams.pageSize"
           ></app-paging-header>
-          <div class="mt-2 d-flex justify-content-around">
+          <div class="mt-2 d-flex justify-content-around" *ngIf="products">
             <input
               (keyup.enter)="onSearch()"
               type="text"
