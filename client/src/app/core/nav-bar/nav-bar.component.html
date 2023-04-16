@@ -77,9 +77,14 @@
         </li> -->
       </ul>
       <div class="d-flex align-items-center" role="search">
-        <a href="#" class="position-relative">
+        <a routerLink="/basket" class="position-relative">
           <i class="fas fa-shopping-cart me-3 text-light"></i>
-          <div class="position-absolute cart-no">5</div>
+          <div
+            *ngIf="basket$ | async as basket"
+            class="position-absolute cart-no"
+          >
+            {{ basket.items?.length }}
+          </div>
         </a>
         <!-- <input
           id="search"

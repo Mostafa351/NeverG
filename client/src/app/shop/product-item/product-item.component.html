@@ -9,7 +9,11 @@
       <div
         class="d-flex justify-content-center align-items-center hover-overlay"
       >
-        <button type="button" class="btn btn-sm btn-primary me-2">
+        <button
+          (click)="addItemToBasket()"
+          type="button"
+          class="btn btn-sm btn-primary me-2"
+        >
           <i class="fa fa-shopping-cart me-2"></i>
         </button>
         <button
