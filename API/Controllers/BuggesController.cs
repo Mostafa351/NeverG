@@ -2,6 +2,7 @@
 
 
 using API.Errors;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -12,6 +13,12 @@ namespace API.Controllers
         public BuggesController(StoreContext context)
         {
             _context = context;
+        }
+        [HttpGet("testAuth")]
+        [Authorize]
+        public ActionResult<string> GetSecretText()
+        {
+            return "secret text";
         }
         [HttpGet("notfound")]
         public ActionResult GetNotFoundRequest()
