@@ -18,7 +18,8 @@ import { loadingInterceptor } from './core/interceptors/loading.interceptor';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
