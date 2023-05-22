@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, ReplaySubject, Subscription, map, of } from 'rxjs';
 import { Router } from '@angular/router';
+import { IAddress } from '../shared/models/address';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,6 @@ export class AccountService {
   LoadCurrentUser(token: string) {
     if (token === '') {
       this.currentUserSource.next({ email: "", displayName: "", token: "" });
-
       return of();
     }
     let headers = new HttpHeaders();
@@ -65,5 +65,12 @@ export class AccountService {
   checkEmailExists(email: string) {
     return this.http.get(this.baseUrl + "account/emailexists?email=" + email);
   }
-
+  getUserAddress() {
+    return this.http.get<IAddress>(this.baseUrl + "account/address");
+  }
+  updateUserAddress(address: IAddress) {
+    return this.http.put<IAddress>(this.baseUrl + "account/address", address);
+  }
 }
+
+

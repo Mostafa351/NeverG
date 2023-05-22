@@ -6,80 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Raleway&family=Rubik&display=swap');
 
 /* Importing Bootstrap SCSS file. */
-@import "./node_modules/bootstrap/scss/bootstrap";
+// @import "./node_modules/bootstrap/scss/bootstrap";
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
-/*    Sass Template */
-/*============ variables ==========*/
-$font-baloo:"Baloo Thambi 2", cursive;
-$font-raleway:"Raleway", cursive;
-$font-rubik:"Rubik", cursive;
 
-$color-primary:#003859;
-$color-second:#7c99a7;
-$color-yellow:#ffd289;
-
-/*============ global settings ============*/
-
-button,button:focus{
-  outline: none !important;
-  box-shadow: none !important;
-}
-a{
-  text-decoration: none;
-}
-
-/*============ typo ============*/
-.font-baloo{
-  font-family:$font-baloo ;
-}
-.font-rale{
-  font-family:$font-raleway  ;
-}
-.font-rubik{
-  font-family:$font-rubik;
-}
-
-.font-size-12{
-  font-size: 12px;
-}
-.font-size-14{
-  font-size: 14px;
-}
-.font-size-16{
-  font-size: 16px;
-}
-.font-size-20{
-  font-size: 20px;
-}
-/*============ color template ============*/
-.color-primary{
-  color: $color-primary;
-}
-.color-primary-bg{
-  background-color: $color-primary;
-}
-.color-secondary{
-  color: $color-second;
-}
-.color-second-bg{
-  background-color: $color-second;
-}
-.color-yellow{
-  color: $color-yellow;
-}
-.color-yellow-bg{
-  background-color: $color-yellow;
-}
-
-/*============ images ============*/
-
-/*============ body bg ============*/
-body{
-  background-color: #f5f1f1;
-}
 /*============ xng-breadcrumb ============*/
 
 label.xng-breadcrumb-trail{
