@@ -2,11 +2,12 @@
   <ul class="nav nav-tabs bg-body nav-justified">
     <li class="nav-item" *ngFor="let step of steps; let i = index">
       <button
+        [disabled]="true"
         (click)="onClick(i)"
         [class.active]="selectedIndex === i"
         class="nav-link py-3 text-uppercase fw-bold btn-block"
       >
-        {{ step.label }}:{{ step.completed }}
+        {{ step.label }}
       </button>
     </li>
   </ul>

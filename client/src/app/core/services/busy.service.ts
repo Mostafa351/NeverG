@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
+import { NgxSpinnerService } from 'node_modules\\ngx-spinner';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ export class BusyService {
 
   busy() {
     this.busyRequestCount++;
-    this.spinner.show(undefined, {
-      type: "timer",
+    this.spinner.show('', {
+      type: "line-scale-party",
       bdColor: "rgba(255, 255, 255, 0.5)",
       color: "#333333",
       template:

@@ -12,6 +12,7 @@ export class SectionHeaderComponent implements OnInit, OnDestroy {
   constructor(private bcService: BreadcrumbService) { }
   ngOnInit(): void {
     this.breadcrumb$ = this.bcService.breadcrumbs$;
+    console.log(this.breadcrumb$);
   }
   ngOnDestroy(): void {
   }
