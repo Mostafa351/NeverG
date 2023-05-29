@@ -12,12 +12,12 @@ import { CdkStepper } from '@angular/cdk/stepper';
 })
 export class CheckoutReviewComponent implements OnInit {
   @Input() appStepper: CdkStepper | undefined;
-  basket$: Observable<IBasket> | undefined;
+  basket$: Observable<IBasket | null> | null = null;
 
   constructor(private basketService: BasketService, private toaster: ToastrService) { }
   ngOnInit(): void {
-    this.basket$ = this.basketService.basket$;
-
+    if (this.basketService.basket$ !== null)
+      this.basket$ = this.basketService.basket$;
   }
   creatPaymentIntent() {
     return this.basketService.creatPaymentIntent().subscribe({

@@ -1,7 +1,7 @@
 import { IUser } from './../shared/models/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, ReplaySubject, Subscription, map, of } from 'rxjs';
+import { ReplaySubject, map, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { IAddress } from '../shared/models/address';
 

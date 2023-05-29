@@ -9,10 +9,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./basket.component.scss']
 })
 export class BasketComponent implements OnInit {
-  basket$: Observable<IBasket> | undefined;
+  basket$: Observable<IBasket | null> | null = null;
   constructor(private basketService: BasketService) { }
   ngOnInit(): void {
-    this.basket$ = this.basketService.basket$;
+    if (this.basketService.basket$ !== null)
+      this.basket$ = this.basketService.basket$;
   }
   removeBasketItem(item: IBasketItem) {
     this.basketService.removeItemFromBasket(item);

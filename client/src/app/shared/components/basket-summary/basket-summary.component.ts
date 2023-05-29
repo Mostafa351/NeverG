@@ -10,7 +10,7 @@ import { IOrderItem } from '../../models/order';
   styleUrls: ['./basket-summary.component.scss']
 })
 export class BasketSummaryComponent implements OnInit {
-  basket$: Observable<IBasket> | undefined;
+  basket$: Observable<IBasket | null> | null = null;
   @Output() decrement: EventEmitter<IBasketItem> = new EventEmitter<IBasketItem>();
   @Output() increment: EventEmitter<IBasketItem> = new EventEmitter<IBasketItem>();
   @Output() remove: EventEmitter<IBasketItem> = new EventEmitter<IBasketItem>();
@@ -21,7 +21,8 @@ export class BasketSummaryComponent implements OnInit {
 
   constructor(private basketService: BasketService) { }
   ngOnInit(): void {
-    this.basket$ = this.basketService.basket$;
+    if (this.basketService.basket$ !== null)
+      this.basket$ = this.basketService.basket$;
   }
 
   dncrementItemQuantity(item: IBasketItem) {

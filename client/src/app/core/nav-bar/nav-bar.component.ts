@@ -11,7 +11,7 @@ import { IUser } from 'src/app/shared/models/user';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  basket$: Observable<IBasket> | undefined;
+  basket$: Observable<IBasket | null> | null = null;
   crruntUser$: Observable<IUser> | undefined;
   constructor(private basketService: BasketService, private accountService: AccountService) { }
   ngOnInit(): void {

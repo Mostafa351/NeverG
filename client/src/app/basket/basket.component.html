@@ -1,6 +1,9 @@
 <div class="container">
-  <div *ngIf="(basket$ | async) === null">
-    <p>There are no items in your basket</p>
+  <div class="mt-5" *ngIf="(basket$ | async) === null">
+    <h3>
+      <i class="fa-solid fa-face-sad-cry text-secondary"></i>
+      There are no items in your basket
+    </h3>
   </div>
   <div *ngIf="basket$ | async as basket">
     <div class="pb-5">

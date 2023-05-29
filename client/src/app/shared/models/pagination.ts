@@ -5,3 +5,10 @@ export interface IPagination {
   count: number;
   data: IProduct[];
 }
+
+export class Pagination implements IPagination {
+  pageIndex: number | null = 0
+  pageSize: number | null = 0
+  count: number = 0
+  data: IProduct[] = [];
+}

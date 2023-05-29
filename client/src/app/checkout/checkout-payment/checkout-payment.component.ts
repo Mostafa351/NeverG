@@ -67,8 +67,6 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
   }
 
   onChange(event: any) {
-    console.log(event);
-
     if (event.error !== undefined) {
       this.cardErrors = event.error.message;
     } else {
@@ -92,20 +90,22 @@ export class CheckoutPaymentComponent implements AfterViewInit, OnDestroy {
   async submitOrder() {
     this.loading = true;
     const basket = this.basketService.getCurrentBasketValue();
-    try {
-      const createdOrder = await this.createOrder(basket);
-      const paymentResult = await this.confirmPaymentwithStripe(basket);
-      if (paymentResult.paymentIntent) {
-        this.basketService.deleteBasket(basket);
-        const navigationExtras: NavigationExtras = { state: createdOrder };
-        this.router.navigate(['checkout/success'], navigationExtras);
-      } else {
-        this.toaster.error(paymentResult.error.message);
+    if (basket) {
+      try {
+        const createdOrder = await this.createOrder(basket);
+        const paymentResult = await this.confirmPaymentwithStripe(basket);
+        if (paymentResult.paymentIntent) {
+          this.basketService.deleteBasket(basket);
+          const navigationExtras: NavigationExtras = { state: createdOrder };
+          this.router.navigate(['checkout/success'], navigationExtras);
+        } else {
+          this.toaster.error(paymentResult.error.message);
+        }
+        this.loading = false;
+      } catch (error) {
+        console.log(error);
+        this.loading = false;
       }
-      this.loading = false;
-    } catch (error) {
-      console.log(error);
-      this.loading = false;
     }
   }
   private async confirmPaymentwithStripe(basket: any) {

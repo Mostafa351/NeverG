@@ -20,12 +20,12 @@ export class AppComponent implements OnInit {
     if (token) {
       this.accountService.LoadCurrentUser(token).subscribe({
         next: (value) => {
-          console.log(value);
+          // console.log("value: " + value);
         },
         error: (error) => {
           console.error(error);
         }
-      })
+      });
     } else {
       this.accountService.LoadCurrentUser('');
     }
