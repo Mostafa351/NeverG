@@ -7,13 +7,14 @@ import { IProType } from '../shared/models/proType';
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
 import { Pagination } from '../shared/models/pagination';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl = "https://localhost:5001/api/";
+  baseUrl = environment.apiUrl;
   products: IProduct[] | undefined = [];
   brands: IBrand[] | undefined = [];
   types: IProType[] | undefined = [];

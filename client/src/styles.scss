@@ -5,6 +5,12 @@
 /*      google fonts    */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Raleway&family=Rubik&display=swap');
 
+@import "node_modules/ngx-spinner/animations/ball-spin.css";
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "node_modules/ngx-toastr/toastr.css";
+
 /* Importing Bootstrap SCSS file. */
 // @import "./node_modules/bootstrap/scss/bootstrap";
 
@@ -22,3 +28,6 @@ label.xng-breadcrumb-trail{
   border: 1px solid;
 }
 
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";

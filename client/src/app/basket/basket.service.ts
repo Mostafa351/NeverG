@@ -4,12 +4,13 @@ import { BehaviorSubject, map } from 'rxjs';
 import { Basket, IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
 import { IProduct } from '../shared/models/product';
 import { IDeliveryMethod } from '../shared/models/deliveryMethod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasketService {
-  baseUrl = "https://localhost:5001/api/";
+  baseUrl = environment.apiUrl;
   private basketSource = new BehaviorSubject<IBasket | null>(null);
   basket$ = this.basketSource.asObservable();
   private basketTotalSource = new BehaviorSubject<IBasketTotals | null>(null);

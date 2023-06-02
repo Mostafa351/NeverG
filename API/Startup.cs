@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StackExchange.Redis;
 using Infrastructure.identity;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace API
 {
@@ -25,10 +27,10 @@ namespace API
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x =>
-                x.UseSqlite(_config.GetConnectionString("DefaltConnection")));
+                x.UseNpgsql(_config.GetConnectionString("DefaltConnection")));
             services.AddDbContext<AppIdentityDbContext>(x =>
             {
-                x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+                x.UseNpgsql(_config.GetConnectionString("IdentityConnection"));
             });
             services.AddSingleton<IConnectionMultiplexer>(x =>
             {
@@ -51,16 +53,29 @@ namespace API
         {
             app.UseMiddleware<ExceptionMiddleware>();
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
+
             app.UseHttpsRedirection();
+
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "Content")),
+                RequestPath = "/Content"
+            });
+
             app.UseCors("CorsPolicy");
+
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseSwaggerDocumentation();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapFallbackToController("index", "Fallback");
             });
         }
     }
