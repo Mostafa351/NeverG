@@ -6,7 +6,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HomeModule } from './home/home.module';
@@ -27,7 +26,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
+
     BrowserAnimationsModule,
     HttpClientModule,
     HomeModule,

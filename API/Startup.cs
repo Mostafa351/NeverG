@@ -57,6 +57,7 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
             {
