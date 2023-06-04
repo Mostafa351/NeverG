@@ -1,18 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
-/*      google fonts    */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Raleway&family=Rubik&display=swap');
-
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootswatch/dist/pulse/bootstrap.min.css";
 @import "node_modules/ngx-spinner/animations/ball-spin.css";
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "node_modules/ngx-toastr/toastr.css";
-
-/* Importing Bootstrap SCSS file. */
-// @import "./node_modules/bootstrap/scss/bootstrap";
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
@@ -29,5 +23,4 @@ label.xng-breadcrumb-trail{
 }
 
 
-/* Importing Bootstrap SCSS file. */
-@import "./node_modules/bootstrap/scss/bootstrap";
+

@@ -2,6 +2,12 @@
   width: inherit !important;
   margin: 0 0.5rem;
 }
+ul{
+  & li.nav-item{
+    font-weight:bolder;
+    letter-spacing: 1px;
+  }
+}
 
 // .fa-shopping-cart{
 //   font-size: 30px !important;

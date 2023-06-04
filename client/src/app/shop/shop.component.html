@@ -59,15 +59,20 @@
             <input
               (keyup.enter)="onSearch()"
               type="text"
-              class="form-control"
-              style="width: 300px; height: 50px"
+              class="form-control me-sm-2"
               placeholder="Search"
               #searchTerm
             />
-            <button class="btn btn-outline-primary mx-2" (click)="onSearch()">
+            <button
+              class="btn btn-outline-primary my-2 my-sm-0 mx-1"
+              (click)="onSearch()"
+            >
               Search
             </button>
-            <button class="btn btn-outline-success" (click)="onReset()">
+            <button
+              class="btn btn-outline-success my-2 my-sm-0"
+              (click)="onReset()"
+            >
               Reset
             </button>
           </div>

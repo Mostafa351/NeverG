@@ -37,6 +37,9 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer"> About </a>
+        </li>
+        <li class="nav-item">
           <a
             class="nav-link"
             routerLink="/test-error"
@@ -46,35 +49,6 @@
             Errors
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="/shop"
-            >Category <i class="fas fa-chevron-down"></i
-          ></a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">OnSale</a>
-        </li> -->
-        <!-- dropdown -->
-        <!-- <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li> -->
       </ul>
       <div class="d-flex align-items-center" role="search">
         <a routerLink="/basket" class="position-relative">
@@ -86,14 +60,6 @@
             {{ basket.items?.length }}
           </div>
         </a>
-        <!-- <input
-          id="search"
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="mx-1 btn btn-outline-dark" type="submit">Search</button> -->
       </div>
       <div class="font-rale font-size-14">
         <ng-container
@@ -140,7 +106,6 @@
                   <i class="fa fa-history me-3"></i> View Orders</a
                 >
               </li>
-
               <li><hr class="dropdown-divider" /></li>
               <li>
                 <a
@@ -153,9 +118,6 @@
               </li>
             </ul>
           </div>
-          <!-- <a class="px-3">Welcome {{ (crruntUser$ | async)?.displayName }}</a>
-  
-          <a class="px-3 border-end border-start text-dark">Logout</a> -->
         </ng-container>
       </div>
     </div>
